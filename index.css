@@ -170,12 +170,18 @@ transition: 0.4s;}
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    transition: .25s;
     font: 35px 'Lobster', cursive;
     margin: 5px;
-    border-style: dotted;
+    border-style: none;
 }
 
-.preo a:hover{
-    border-color:crimson;
+.preo:hover{
+    border-color:brown;
     text-decoration: overline underline;
+    border-width: thick;
+    background-color: brown;
+    border-style: dashed;
+    border-color: brown;
+    color:#0000b1;
 }

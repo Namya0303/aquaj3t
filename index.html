@@ -1,8 +1,8 @@
-
 <html>
+
 <head>
-<style>
-    .nav-bar {
+    <style>
+        .nav-bar {
       list-style-type: none;
 	  margin: 0;
 	  box-shadow: 2px;
@@ -44,6 +44,7 @@ font-size: 24px;
 
     li a:hover{
       background-color: #f1f1f1;
+      padding: 14px 40px;
       color: #000;
 	  transition: background-color:0.3s;
 	}
@@ -151,6 +152,11 @@ font-size: 24px;
         
     }
     
+        .pe{
+            border-style: none;
+            border-color:none;
+            border:none;
+        }
     @keyframes loaderFade{
         0%{
             opacity:0%;
@@ -187,9 +193,9 @@ font-size: 24px;
     
     
     .na{
-        animation-name: wobbly_gobble;
-        animation-duration: 3s;
-        animation-delay: -1s;
+        animation-name: rotation;
+        animation-duration: 6s;
+        animation-delay: -1;
         animation-iteration-count: infinite;
     }
     
@@ -203,21 +209,65 @@ font-size: 24px;
         animation-delay: -1s;
         animation-iteration-count: infinite;
     }
+    
+    .modal-header{
+        background-color: crimson;
+        color:aliceblue;
+        font-size: 30px;
+        font-family: monospace;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    .modalbg{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color: #000;
+        opacity: 100%
+    }
+    .modal-body{
+        background-color: #2e2e2e;
+        padding-top: 50px;
+        color:aliceblue;
+        font-size: 15px;
+        font-family: sans-serif;
+    }
+    .modal-footer{
+        background-color: #2e2e2e;
+        color:aliceblue;
+        font-size: 45px;
+        font-family:sans-serif;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+    .btn btn-default{
+        background-color: crimson;
+         color:aliceblue;
+        font-size: 45px;
+        font-family:sans-serif;
+    }
+        
+        @keyframes rotation
+        {
+            0%{transform: rotate(0deg);}
+            100%{transform:rotate(360deg);}
+        }
+        
     </style>
-<title>AquaJ3t</title>
- <link rel="icon" href="l2.png" type="image/gif" sizes="16x16"> 
- <link rel="stylesheet" type="text/css" href="index.css">
- <link rel="stylesheet" type="text/css" href="style.css">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googl$("p").remove(".test");eapis.com/css?family=Emblema+One|Aladin|Aldrich|Kavivanar|Coiny|Bungee|Sedgwick+Ave+Display|Fjalla+One|Lobster|Merriweather+Sans|Mr+Bedfort|Oswald|Encode+Sans+Expanded" rel="stylesheet">
-
- <script>
-      $(document).ready(function(){
+    <title>AquaJ3t</title>
+    <link rel="icon" href="l2.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googl$(" p").remove(".test");eapis.com/css?family=Emblema+One|Aladin|Aldrich|Kavivanar|Coiny|Bungee|Sedgwick+Ave+Display|Fjalla+One|Lobster|Merriweather+Sans|Mr+Bedfort|Oswald|Encode+Sans+Expanded" rel="stylesheet">
+<script>
+    $(document).ready(function(){
           $(".mainBody").hide();
   $('#loadButton').click(function(){
       $('.bobo').animate('loaderFade');
@@ -225,11 +275,21 @@ font-size: 24px;
       $(".mainBody").show(2000);
   });
 });
+    </script>
+    <script>function booo(){
+        $(document).ready(function(){
+          $(".mainBody").hide();
+  $('#loadButton').click(function(){
+      $('.bobo').animate('loaderFade');
+      $("div").remove(".bobo");
+      $(".mainBody").show(2000);
+  });
+});}
       
       
 </script>
-<script>
-//Smooth Scroll
+    <script>
+        //Smooth Scroll
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -246,228 +306,239 @@ $(function() {
 });
     </script>
 </head>
+
 <body style="background: #000;">
-<div class="proto" id="homo">
-<div class="bobo" id="bobo">
-            <div class="bo">
-                <h1 class="txt"><br><i><b>AquaJ3t</b></i></h1>
+    
+        <div class="bobo" id="bobo">
+            <div class="bo"><center>
+                <h1 class="txt"><i><b>AquaJ3t</b></i></h1><br><img class="na" src="load-ogo.png" style="animation-delay: 4.5s; float: center;" height=150px width=auto></center>
             </div>
-    <br><br><center><button onclick="hide()" class="loadButton" id="loadButton">Dive in!!!</button></center>
-    </div></div>
-<div class="mainBody" id="mainBody">
-<audio autoplay loop hide>
-    <source src="matrix1.mp3">
-</audio>
-
-<div class="navbar" style="z-index: 2; animation: 3s typing; animation-delay: 2s;">
-    <ul class="nav-bar">
-         <li><a class="pre0" href="#pre0">Pre-order Now</a></li>
-         <li><a class="specss" href="#specs">Specifictions</a>
-         <li><a class="abt" href="#abt">About</a>
-		 <li><a class="homo" href="#homo">Home</a></li>
-        <li style="float: left; margin:2px 0px;" ><i><b><h6  class="navlog">AquaJ3t</h6></b></i><br><br></li><li style="float: left; margin:2px 0px;" ><img class="na" src="load-ogo.png" height=70px width=auto></li>
-</ul>
-</div>
-<br><br><div ></div>
-<div id="abt"></div>
-   <br><br><br>
-   <div class="intro-txt" >
-    <center>
-    <h2>AquaJ3t Proudly Presents...</h2><br>
-    <h1>The New Generation 'Surf Boards'</h1><br>
-    
-        <p>Don't surf on water... glide on it.</p><br><br><p>The new AquaJ3t HoverBoard lets you hover on water. With the new compact and slique design, the new AquaJ3t is very portable and can easily fit insidee your small suitcase allowing you to travel light.</p></center>
-</div><br><br>
-<div class="sec-divider" id="specs"></div>    <br><br><br><br>
-<div class="specs" >
-    <div class="left">
-       <div class="buttons">
-       <table class="sp">
-        <td>
-            
-            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Battery"><i class="fas fa-battery-full"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Battery</p>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Remote"><i class="fas fa-mobile"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remote Play</p>
-            </tr><br><br>
-            
-            
-            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Memory"><i class="far fa-hdd"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memory</p>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Cam"><i class="fas fa-camera"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera</p>
-            </tr><br><br>
-            
-            
-            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Dimensions"><i class="fas fa-ruler-combined"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensions</p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ABS"><i class="fas fa-balance-scale"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automated Balance System</p>
-            </tr><br><br>
             <br><br>
-           </td>
-              </table>
+            <center><button onclick="hide()" class="loadButton" id="loadButton">Dive in!!!</button></center>
         </div>
-        
-        <div class="modal-content">
-          
-              
-                      <!-- Modal -->
-  <div class="modal fade" id="Battery" role="dialog">
-    <div class="modal-dialog">
     
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Battery Life</h4>
-        </div>
-        <div class="modal-body">
-          <p>AquaJ3t comes with a TYPE-C 3m charging cord and a nine watt adaptor.<br><br>
-          The Aquaj3t, once fully charged can run upto 9 Hours without any interuptions. It has an automated warning viberation set 15 minutes before the battery runs out to prevent any accidents with our dear community which last for 5 minutes making it practically impossible to miss
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-    <!-- Modal -->
-  <div class="modal fade" id="Memory" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Fitness Records</h4>
-        </div>
-        <div class="modal-body">
-          <p>Aquaj3t Has a 8GB memory drive installed in it which records thee activity and automatically calculates the calories burnt by the user. It also records the usage time of previous three uses lasting more than 30 minutes</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-    <!-- Modal -->
-  <div class="modal fade" id="Dimensions" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Dimensions</h4>
-        </div>
-        <div class="modal-body">
-          <p>AquaJ3t is a compact hoverboard made to work on water. 
-          <br>It has the dimensions of <b>20inx5in</b> which can fit in all small sized suitcases made by leading brands.
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-    <!-- Modal -->
-  <div class="modal fade" id="Remote" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Remote Play</h4>
-        </div>
-        <div class="modal-body">
-          <p>
-          AquaJ3t is a device which records your usage stats which can be projected on your mobile screen. This mobile app helps you with your device and can help you configure the speed and lighting of the AquaJ3t. The photos captured by the 16 MegaPixel camera installed in the AquaJ3t are also visible here and can be saved and edited.
-          <br><br>The app is available in All major app stores and at //https:namya0303.github.io/aJ3t1.o
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-   <!-- Modal -->
-  <div class="modal fade" id="Cam" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Camera</h4>
-        </div>
-        <div class="modal-body">
-          <p>
-          AquaJ3t has a 16 MegaPixel Camera installed at both sides of the device: front and back. The camera automatically clicks pictures every 2 minutes while being used and it is upto you if you keep them or delete them forever: from your mobile and from your AquaJ3t. 
-            </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="ABS" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Automated Balance System</h4>
-        </div>
-        <div class="modal-body">
-          <p>
-          AquaJ3t has an Automated Balance System which helps it to maintain its balance no matter how strong the waves are or how heavy the user is.<br>AquaJ3t gurentees that if used properly with precautions will not sink. The Automated Balane System has put Machine Learning to new heights where it has told the machine about X;Y;Z Axis and how to maintain them under any circumstances
-            </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div> 
-</div>
-    <div class="right" ><br><h1 style="font-family: 'Product Sans';color: darkgray;
-    font-weight: 500;
-        white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifications</h1></div>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="sec-divider" id="pre0"></div>    <br><br><br><br>
-<div class="pre0" ><div class="left1">
-    <h1 style="width:50%; float:left; margin-left: 20px; color:white">Pre-Order Now</h1>
-    <h2 style="width:50%; float:left; margin-left: 20px; color:darkgray;">AquaJ3t Would Be available in the market on 1 August 2019 and would be exclusivly delivered to those who pre-order it<br><br>Those who mean to buy it in the market will have to wait untill the very end of the exclusive week and the product will be available to them by 1st August 2019.<br><br>Pre-Ordering it would also get you a camera lense cleaning solution and a lense cleaning cloth worth &#8377 1500 free.</h2>
-</div>
-    <div class="bu!"><img   src="hamara product.png" style="float:right;"></div>
-</div>
+    <div class="mainBody" id="mainBody">
+        <audio autoplay loop hide>
+            <source src="matrix1.mp3">
+        </audio>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="cntdwn"><br>
-                <h2 style="font-size:50px;color: white;font-family: 'Aldrich', sans-serif;font: 2em;text-decoration: none;text-align: center"> HURRY UP!</h2><br>
-                <h2 style="font-size:30px; color: #f9f9f9;color: white;font-family: 'Aldrich', sans-serif;font: 2em;text-decoration: none;text-align:center;">Product Launches In-</h2>
-                <p id="demo" style="text-align: center;color: white;font-size: 60px;"></p>
-                <h2 style="text-align:right; font-size:30px;color: white;font-family: 'Aldrich', sans-serif;font: 2em;text-decoration: none;text-align: center;">1<sup>st</sup> Aug 2019</h2>
-                <script>
-                    // Set the date we're counting down to
+        <div class="navbar" style="z-index: 2; animation: 3s typing; animation-delay: 2s;">
+            <ul class="nav-bar">
+                <li><a class="pre0" href="#pre0">Pre-order Now</a></li>
+                <li><a class="specss" href="#specs">Specifictions</a>
+                <li><a class="abt" href="#abt">About</a>
+                <li><a class="homo" href="#homo">Home</a></li>
+                <li style="float: left; margin:2px 0px;"><i><b>
+                            <h6 class="navlog">AquaJ3t</h6>
+                        </b></i><br><br></li>
+                <li style="float: left; margin:2px 0px;"><img class="na" src="load-ogo.png" height=70px width=auto></li>
+            </ul>
+        </div>
+        <div class="proto" id="homo"></div>
+        <br><br>
+        <div></div>
+        <div id="abt"></div>
+        <br><br><br>
+        <div class="intro-txt">
+            <center>
+                <h2>AquaJ3t Proudly Presents...</h2><br>
+                <h1>The New Generation 'Surf Boards'</h1><br>
+
+                <p>Don't surf on water... glide on it.</p><br><br>
+                <p>The new AquaJ3t HoverBoard lets you hover on water. With the new compact and slique design, the new AquaJ3t is very portable and can easily fit insidee your small suitcase allowing you to travel light.</p>
+            </center>
+        </div><br><br>
+        <div class="sec-divider" id="specs"></div> <br><br><br><br>
+        <div class="specs">
+            <div class="left">
+                <div class="buttons">
+                    <table class="sp">
+                        <td>
+
+                            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Battery"><i class="fas fa-battery-full"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Battery</p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Remote"><i class="fas fa-mobile"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remote Play</p>
+                            </tr><br><br>
+
+
+                            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Memory"><i class="far fa-hdd"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memory</p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Cam"><i class="fas fa-camera"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera</p>
+                            </tr><br><br>
+
+
+                            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#Dimensions"><i class="fas fa-ruler-combined"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dimensions</p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <p type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ABS"><i class="fas fa-balance-scale"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automated Balance System</p>
+                            </tr><br><br>
+                            <br><br>
+                        </td>
+                    </table>
+                </div>
+
+                <div class="modal-content">
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Battery" role="dialog">
+                        <div class="modal-dialog" style="border-top-left-radius: 20px;border-top-right-radius: 20px;">
+
+                            <!-- Modal content--><div class="modalbg">
+                            <div class="modal-content" style="border-top-left-radius: 20px;border-top-right-radius: 20px; background-color: black;">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Battery Life</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>AquaJ3t comes with a TYPE-C 3m charging cord and a nine watt adaptor.<br><br>
+                                        The Aquaj3t, once fully charged can run upto 9 Hours without any interuptions. It has an automated warning viberation set 15 minutes before the battery runs out to prevent any accidents with our dear community which last for 5 minutes making it practically impossible to miss<br><br><br>
+                                    <button type="button" style=" border-color: crimson;float: right; background: crimson;font-family: sans-serif;"class="btn btn-default" data-dismiss="modal">Close</button></p><br>
+                                    
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Memory" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content--><div class="modalbg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Fitness Records</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Aquaj3t Has a 8GB memory drive installed in it which records thee activity and automatically calculates the calories burnt by the user. It also records the usage time of previous three uses lasting more than 30 minutes<br><br><br>
+                                        <button type="button" style=" border-color: crimson;float: right; background: crimson;font-family: sans-serif;"class="btn btn-default" data-dismiss="modal">Close</button></p><br>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Dimensions" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content--><div class="modalbg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Dimensions</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>AquaJ3t is a compact hoverboard made to work on water.
+                                        <br>It has the dimensions of <b>20inx5in</b> which can fit in all small sized suitcases made by leading brands.<br><br><br>
+                                    <button type="button" style=" border-color: crimson;float: right; background: crimson;font-family: sans-serif;"class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </p><br>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Remote" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content--><div class="modalbg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Remote Play</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        AquaJ3t is a device which records your usage stats which can be projected on your mobile screen. This mobile app helps you with your device and can help you configure the speed and lighting of the AquaJ3t. The photos captured by the 16 MegaPixel camera installed in the AquaJ3t are also visible here and can be saved and edited.
+                                        <br><br>The app is available in All major app stores and at //https:namya0303.github.io/aJ3t1.o
+                                        <br><br><br>
+                                    <button type="button" style=" border-color: crimson;float: right; background: crimson;font-family: sans-serif;"class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </p><br>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Cam" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content--><div class="modalbg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Camera</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        AquaJ3t has a 16 MegaPixel Camera installed at both sides of the device: front and back. The camera automatically clicks pictures every 2 minutes while being used and it is upto you if you keep them or delete them forever: from your mobile and from your AquaJ3t.
+                                        <br><br><br>
+                                    <button type="button" style=" border-color: crimson;float: right; background: crimson;font-family: sans-serif;"class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </p><br>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ABS" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content--><div class="modalbg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Automated Balance System</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        AquaJ3t has an Automated Balance System which helps it to maintain its balance no matter how strong the waves are or how heavy the user is.<br>AquaJ3t gurentees that if used properly with precautions will not sink. The Automated Balane System has put Machine Learning to new heights where it has told the machine about X;Y;Z Axis and how to maintain them under any circumstances
+                                        <br><br><br>
+                                    <button type="button" style=" border-color: crimson;float: right; background: crimson;font-family: sans-serif;"class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </p><br>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right"><br>
+                <h1 style="font-family: 'Product Sans';color: darkgray;
+    font-weight: 500;
+        white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifications</h1>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="sec-divider" id="pre0"></div> <br><br><br><br>
+        <div class="pre0">
+            <div class="left1">
+                <h1 style="width:50%; float:left; margin-left: 20px; color:white">Pre-Order Now</h1>
+                <h2 style="width:50%; float:left; margin-left: 20px; color:darkgray;">AquaJ3t Would Be available to Pre-Orderers on 25 July 2019<br><br>it will be available in the marketby 1 August 2019.<br><br>Pre-Ordering it would also get you a camera lense cleaning solution and a lense cleaning cloth worth &#8377 1500 free.</h2>
+            </div>
+            <div class="bu!"><img src="hamara product.png" style="float:right;"></div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="cntdwn"><br>
+            <h2 style="font-size:50px;color: white;font-family: 'Aldrich', sans-serif;font: 2em;text-decoration: none;text-align: center"> HURRY UP!</h2><br>
+            <h2 style="font-size:30px; color: #f9f9f9;color: white;font-family: 'Aldrich', sans-serif;font: 2em;text-decoration: none;text-align:center;">Product Launches In-</h2>
+            <p id="demo" style="text-align: center;color: white;font-size: 60px;"></p>
+            <h2 style="text-align:right; font-size:30px;color: white;font-family: 'Aldrich', sans-serif;font: 2em;text-decoration: none;text-align: center;">1<sup>st</sup> Aug 2019</h2>
+            <script>
+                // Set the date we're counting down to
                     var countDownDate = new Date("Aug 1, 2019 00:00:00").getTime();
 
                     // Update the count down every 1 second
@@ -495,52 +566,58 @@ $(function() {
                             document.getElementById("demo").innerHTML = "The Product Has Been Launched!";
                         }
                     }, 1000);
-                </script><center><a class="preo"href="https://docs.google.com/forms/d/e/1FAIpQLSfqTmoDnckKa7xaqwh9bXsUSFqjGmh4f9rKwxWCtg-aDXOrhg/viewform?usp=sf_link" class="button"  target="blank" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#preorder" style="border-radius: 50px; transition: 0.5s;">Pre Order</a></center>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="preorder" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Pre-Order</h4>
-        </div>
-        <div class="modal-body">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMJjEhn7S2vJfJHU-FnP8JRWvemn1FTT63_E07P769_mCfsQ/viewform?embedded=true" width="540" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div> 
+                </script>
+            <center><a class="preo" href="https://docs.google.com/forms/d/e/1FAIpQLSfqTmoDnckKa7xaqwh9bXsUSFqjGmh4f9rKwxWCtg-aDXOrhg/viewform?usp=sf_link" class="button" target="blank" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#preorder" style="border-radius: 50px; transition: 0.5s;">Pre Order</a></center>
 
-    <br><br><embed src="matrix.mp3" autoplay="true" hidden="true" loop="true"><br>
-<div class="local-scroll" style="position: fixed; right: 0px; bottom: 0px; display: block;color:crimson;margin-right: 50px; font-size: 70px;margin-bottom: 7px;" id="scroll">
-<a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
-</div>
-        <div class="contact-us" ><br>
-        <h6 style="color: #fff; font-size: 36px; text-align:center;">Contact Us</h6><br><br>
-        <center>
-            <p style="text-align: center;color: white;font-size: 60px;">@</p><br><br>
-            <p style="font-size: 26px;font-weight: bold;color: white;">mail us at<br><b>Contactus@AquaJ3t.com</b></p>
-        </center><br>
+            <!-- Modal -->
+            <div class="modal fade" id="preorder" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Pre-Order</h4>
+                        </div>
+                        <div class="modal-body">
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMJjEhn7S2vJfJHU-FnP8JRWvemn1FTT63_E07P769_mCfsQ/viewform?embedded=true" width="540" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <br><br><embed src="matrix.mp3" autoplay="true" hidden="true" loop="true"><br>
+        <div class="local-scroll" style="position: fixed; right: 0px; bottom: 0px; display: block;color:crimson;margin-right: 50px; font-size: 70px;margin-bottom: 7px;" id="scroll">
+            <a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
+        </div>
+        <div class="contact-us"><br>
+            <h6 style="color: #fff; font-size: 36px; text-align:center;">Contact Us</h6><br><br>
+            <center>
+                <p style="text-align: center;color: white;font-size: 60px;">@</p><br><br>
+                <p style="font-size: 26px;font-weight: bold;color: white;">mail us at<br><b>Namyachhabra@gmail.com</b></p>
+            </center><br>
+        </div>
+
+        <div class="footer" style="text-align: center; font-weight: 300;"><br>
+            <center><b>
+                    <a href="https://www.facebook.com/events/164980130772016/" target="blank" alt="Visit Our Facebook Page">
+                        <p class="fot"><i class="fab fa-facebook"></i></p>
+                    </a>
+
+                    <h5 style="font-family: 'Kavivanar', cursive; font-size: 2em;">site designed and developed by<br><a href="https://www.facebook.com/profile.php?id=100010345936790" style=" text-decoration:none;">Namya Chhabra</a><br>Pyrotech Club, Tagore International School,<br>Vasant Vihar<bR><br>3D Prototype Designed By: Raj Anand</h5><br>
+                </b></center>
+            </center>
+            <br>
+        </div>
+
+        <br>
     </div>
-       
-       <div class="footer" style="text-align: center; font-weight: 300;"><br>
-        <center><b>
-            <a href="https://www.facebook.com/events/164980130772016/" target="blank" alt="Visit Our Facebook Page">
-                <p class="fot"><i class="fab fa-facebook"></i></p>
-            </a>
-    
-            <h5 style="font-family: 'Kavivanar', cursive; font-size: 2em;">site designed and developed by<br><a href="https://www.facebook.com/profile.php?id=100010345936790" style=" text-decoration:none;">Namya Chhabra</a><br>Pyrotech Club, Tagore International School,<br>Vasant Vihar<bR><br>3D Prototype Designed By: Raj Anand</h5><br></b></center></center>
-    <br></div>
-    
-    <br></div>
 </body>
+
 </html>
